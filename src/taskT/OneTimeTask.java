@@ -11,9 +11,7 @@ public class OneTimeTask extends Task {
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        boolean getOnCurrenDate;
         LocalDate compareDateTask = getDateTime().toLocalDate();
-        getOnCurrenDate = localDate.isEqual(compareDateTask);
-        return getOnCurrenDate;
+        return localDate.isEqual(compareDateTask);
     }
 }

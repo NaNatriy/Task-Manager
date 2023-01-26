@@ -11,11 +11,9 @@ public class MounthlyTask extends Task {
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        boolean getOnCurrenDate;
         LocalDate compareDateTask = getDateTime().toLocalDate();
         boolean equalOfDates = compareDateTask.isEqual(localDate);
-        getOnCurrenDate = (getDateTime().getDayOfMonth() == localDate.getDayOfMonth()) &&
+        return (getDateTime().getDayOfMonth() == localDate.getDayOfMonth()) &&
                 (getDateTime().isBefore(localDate.atStartOfDay()) || equalOfDates);
-        return getOnCurrenDate;
     }
 }
