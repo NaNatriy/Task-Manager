@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Main {
-    public static void main(String[] args) throws TaskNotFoundException {
+    public static void main(String[] args){
         TaskService taskService = new TaskService();
 
         DailyTask dailyTask2 = null;
