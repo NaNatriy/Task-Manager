@@ -11,9 +11,7 @@ public class YearlyTask extends Task {
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        boolean getOnCurrenDate;
-        getOnCurrenDate = (getDateTime().getDayOfMonth() == (localDate.getDayOfMonth())) &&
+        return (getDateTime().getDayOfMonth() == (localDate.getDayOfMonth())) &&
                 (getDateTime().getDayOfYear() == localDate.getDayOfYear());
-        return getOnCurrenDate;
     }
 }

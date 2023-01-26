@@ -13,9 +13,8 @@ public class DailyTask extends Task{
 
     @Override
     public boolean appearsIn(LocalDate localDate){
-        boolean getOnCurrenDate;
-        LocalDate compareDateTask = getDateTime().toLocalDate();
-        getOnCurrenDate = compareDateTask.isEqual(localDate);
-        return getOnCurrenDate;
+        return localDate.isAfter(getDateTime().toLocalDate());
+
+
     }
 }

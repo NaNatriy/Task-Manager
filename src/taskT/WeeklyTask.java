@@ -11,11 +11,9 @@ public class WeeklyTask extends Task {
     }
 
     public boolean appearsIn(LocalDate localDate) {
-        boolean getOnCurrenDate;
         LocalDate compareDateTask = getDateTime().toLocalDate();
         boolean equalOfDates = compareDateTask.isEqual(localDate);
-        getOnCurrenDate = (getDateTime().getDayOfWeek().equals(localDate.getDayOfWeek()))  &&
+        return (getDateTime().getDayOfWeek().equals(localDate.getDayOfWeek()))  &&
                 (getDateTime().isBefore(localDate.atStartOfDay()) || equalOfDates);
-        return getOnCurrenDate;
     }
 }
