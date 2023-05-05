@@ -3,8 +3,6 @@ import exception.IncorrectArgumentException;
 import exception.TaskNotFoundException;
 import tFunction.TaskService;
 import taskT.DailyTask;
-import taskT.Task;
-import taskT.YearlyTask;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,9 +26,20 @@ public class Main {
 
         try {
             taskService.remove(2);
+            taskService.updateDescription(1, "Описание изменено");
+            taskService.updateTitle(1, "Название изменено");
         } catch (TaskNotFoundException e) {
             System.out.println("Такой задачи нет!");
         }
         System.out.println(taskService.getAllByDate(LocalDate.now()));
+
+        System.out.println("Вывод удалённой задачи");
+        try {
+            System.out.println(taskService.getRemovedTasks(2));
+        } catch (TaskNotFoundException e) {
+            System.out.println("Такой задачи нет!");
+        }
+
+        System.out.println(taskService.gelAllByGroupByDate());
     }
 }
